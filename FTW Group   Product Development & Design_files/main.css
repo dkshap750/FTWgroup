@@ -663,7 +663,7 @@ a #mantra_CTA {
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
-    margin-top:-8px;
+    margin-top:-10px;
 }
 }
 .serviceLeft {
@@ -762,6 +762,7 @@ a #mantra_CTA {
 	display: table-cell;
 	height: 300px;
 	vertical-align: middle;
+	overflow: hidden
 }
 
 .portfolio-text	{
@@ -785,10 +786,14 @@ a #mantra_CTA {
 }
 
 .content-shown{
-	display:inline-block;
+	display:block;
+	opacity:1;
 }
 
 .content-hidden{
+	opacity:0;
+}
+.content-start{
 	display:none;
 }
 
