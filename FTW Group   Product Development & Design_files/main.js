@@ -84,41 +84,7 @@ $(document).ready(function () {
 
         // edit: Opera and IE requires the "html" elm. animated
     });
-//carousel image and text slider
-    // $("#slideRight-proxy").on("click",function(e){
-    //     var currentActiveContent= $(".content-shown");
-    //     var nextActiveContent= currentActiveContent.next();
-
-    //     if(nextActiveContent.length==0){
-    //         nextActiveContent= $(".slider_content").first();
-    //     };
-
-    //     currentActiveContent.fadeOut(1000).removeClass('content-shown').addClass('content-hidden', function(){currentActiveContent.css('display', "none")
-    //     });
-    //     nextActiveContent.addClass('content-shown',function(){nextActiveContent.css('display', 'block')}).removeClass('content-hidden').delay(1000).fadeIn(1000);
-
-        
-        
-    //     e.preventDefault();
-    // });
-    // $("#slideLast-proxy").on("click",function(e){
-    //     var currentActiveContent= $(".content-shown");
-    //     var nextActiveContent= currentActiveContent.prev();
-
-    //     if(nextActiveContent.length==0){
-    //         nextActiveContent= $(".slider_content").last();
-    //     };
-
-    //     currentActiveContent.fadeOut(1000).removeClass('content-shown').addClass('content-hidden', function(){currentActiveContent.css('display', "none")
-    //     });
-    //     nextActiveContent.addClass('content-shown',function(){nextActiveContent.css('display', 'block')}).removeClass('content-hidden').delay(1000).fadeIn(1000);
-
-            
-        
-
-    //     e.preventDefault();
-    // });
-    
+//carousel image and text slider    
     function moveRight(){
         var currentActiveContent= $(".content-shown");
         var nextActiveContent= currentActiveContent.next();
