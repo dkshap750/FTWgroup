@@ -99,4 +99,18 @@ $(document).ready(function () {
         
         e.preventDefault();
     });
+    $("#slideLast-proxy").on("click",function(e){
+        var currentActiveContent= $(".content-shown");
+        var nextActiveContent= currentActiveContent.prev();
+
+        if(nextActiveContent.length==0){
+            nextActiveContent= $(".slider_content").last();
+        };
+
+        currentActiveContent.removeClass('content-shown').addClass('content-hidden').css("z-index",-10);
+        nextActiveContent.addClass('content-shown').removeClass('content-hidden').css("z-index", 20);
+        $('.portfolio-context').not([currentActiveContent, nextActiveContent]).css('z-index', 1);
+
+        e.preventDefault();
+    });
 });
