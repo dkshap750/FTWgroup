@@ -759,6 +759,21 @@ a #mantra_CTA {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 2em;
+	height: 250px;
+	width: 450px;
+}
+
+.portfolio-image img{
+	height:250px;
+	width:450px;
+}
+
+.content-shown{
+	display:inline-block;
+}
+
+.content-hidden{
+	display:none;
 }
 
 #bottom-items {

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-$(".js-slogan").each(function () {
+    $(".js-slogan").each(function () {
 		var jSlogan = $(this);
 		var pSet = $("p", jSlogan);
 
@@ -34,56 +34,69 @@ $(".js-slogan").each(function () {
 
 // photo animation
 
-$(function() {
-    var _intervalId;
-    
-    function fadeInLastImg()
-    {
-        var backImg = $('.pictures img:first');
-        backImg.hide();
-        backImg.remove();
-        $('.pictures' ).append( backImg );
-        backImg.fadeIn();
-    }
+    $(function() {
+        var _intervalId;
         
-    _intervalId = setInterval( function() {
-        fadeInLastImg();
-    }, 5000 );
+        function fadeInLastImg()
+        {
+            var backImg = $('.pictures img:first');
+            backImg.hide();
+            backImg.remove();
+            $('.pictures' ).append( backImg );
+            backImg.fadeIn();
+        }
+            
+        _intervalId = setInterval( function() {
+            fadeInLastImg();
+        }, 5000 );
 
-});
+    });
 
-$(function() {
-    var date = new Date();
+    $(function() {
+        var date = new Date();
 
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
 
-    if (month < 10) month = "0" + month;
-    if (day < 10) day = "0" + day;
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
 
-    var today = year + "-" + month + "-" + day;       
-    $("#theDate").attr("value", today);
-	});
+        var today = year + "-" + month + "-" + day;       
+        $("#theDate").attr("value", today);
+    });
 
-window.addEventListener("scroll",function() { 
-   if(window.scrollY > 150) {
-      $('#tinyNav').removeClass(".noShow").fadeIn();
-   }
-   else {
-      $('#tinyNav').addClass(".noShow").fadeOut('fast');
-   }
-},false);
+    window.addEventListener("scroll",function() { 
+       if(window.scrollY > 150) {
+          $('#tinyNav').removeClass(".noShow").fadeIn();
+       }
+       else {
+          $('#tinyNav').addClass(".noShow").fadeOut('fast');
+       }
+    },false);
 
 
 // scroll animation
 
- $(".linking ul li a[href^='#'],a[href^='#project_top'],a[href^='#portfolio'],a[href^='#top'],a[href^='#team'],a[href^='#services']").on('click', function(e) {
+    $(".linking ul li a[href^='#'],a[href^='#project_top'],a[href^='#portfolio'],a[href^='#top'],a[href^='#team'],a[href^='#services']").on('click', function(e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 300);
 
         // edit: Opera and IE requires the "html" elm. animated
     });
+//carousel image and text slider
+    $("#slideRight-proxy").on("click",function(e){
+        var currentActiveContent= $(".content-shown");
+        var nextActiveContent= currentActiveContent.next();
 
+        if(nextActiveContent.length==0){
+            nextActiveContent= $(".slider_content").first();
+        };
 
+        currentActiveContent.removeClass('content-shown').addClass('content-hidden').css("z-index",-10);
+        nextActiveContent.addClass('content-shown').removeClass('content-hidden').css("z-index", 20);
+        $('.portfolio-context').not([currentActiveContent, nextActiveContent]).css('z-index', 1);
+        
+        e.preventDefault();
+    });
 });
