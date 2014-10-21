@@ -619,7 +619,7 @@ a #mantra_CTA {
 .goServiceLeft {
 	height: 92px;
 	width: 42px !important;
-	background: rgba(0,0,0,.35);
+	/*background: rgba(0,0,0,.35);*/
 	color: white;
 	border-radius: 2px;
 	text-align: center;
@@ -636,7 +636,7 @@ a #mantra_CTA {
 .goServiceRight {
 	height: 92px;
 	width: 42px !important;
-	background: rgba(0,0,0,.35);
+	/*background: rgba(0,0,0,.35);*/
 	color: white;
 	border-radius: 2px;
 	text-align: center;
@@ -650,6 +650,22 @@ a #mantra_CTA {
 	transition: opactity .4s ease-in-out;
 }
 
+.arrow{
+	height: 80px;
+	width: 35px;
+	margin-top:3px;
+}
+
+#arrow_right{
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    margin-top:-8px;
+}
+}
 .serviceLeft {
 	background: url(images/arrowLeft.svg) 50% 0;
 	width: 42px !important;
